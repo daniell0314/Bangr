@@ -5,16 +5,18 @@ namespace App\Http\Controllers;
 use App\Models\Event;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class EventsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response0
      */
     public function index(User $user)
     {
+        return Inertia::render('events');
         return $user->events()->all();
     }
 

@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EventsController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SignUpController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('login', [LoginController::class, 'index']);
+Route::post('login', [LoginController::class, 'login'])->name('login-page');
+
+Route::get('signUp', [SignUpController::class, 'index']);
+Route::post('signUp', [SignUpController::class, 'store']);
+
+Route::get('dashboard', [DashboardController::class, 'index']);
+Route::get('events', [EventsController::class, 'index']);
