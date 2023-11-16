@@ -18,8 +18,8 @@ return new class extends Migration
 
 			$table->boolean('is_main_contact')->default(false);
 
-			$table->foreign('appointment')->references('id')->on('appointments')->onDelete('cascade');
-			$table->foreign('participant')->nullable()->references('id')->on('users')->onDelete('cascade');
+            $table->foreignId('appointment_id')->constrained();
+            $table->foreignId('user_id')->constrained();
 
             $table->timestamps();
         });
