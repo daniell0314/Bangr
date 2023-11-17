@@ -70,26 +70,29 @@ export default function Login({ status, canResetPassword }) {
                     <InputError message={errors.password} className="mt-2" />
                 </div>
 
-                <div className="block mt-4">
-                    <label className="flex items-center">
+                <div className="flex mt-4">
+                    <label className="flex items-center w-1/2">
                         <Checkbox name="remember" value={data.remember} onChange={handleOnChange} />
                         <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">Remember me</span>
                     </label>
-                </div>
 
-                <div className="flex items-center justify-end mt-4">
                     {canResetPassword && (
                         <Link
                             href={route('password.request')}
-                            className="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+                            className="w-1/2 text-right underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                         >
                             Forgot your password?
                         </Link>
                     )}
 
-                    <PrimaryButton className="ml-4" disabled={processing}>
+                </div>
+                <div className="mt-6">
+                    <PrimaryButton disabled={processing}>
                         Log in
                     </PrimaryButton>
+                </div>
+                <div className='mt-5 text-gray-600 text-sm text-center'>
+                        Don't have an account yet? <a href='/register' className='underline cursor-pointer text-black'>Sign Up</a>
                 </div>
             </form>
         </GuestLayout>
