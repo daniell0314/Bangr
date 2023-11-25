@@ -91,8 +91,8 @@ export default function Login({ status, canResetPassword }) {
                         Log in
                     </PrimaryButton>
                 </div>
-                <div className='mt-5 text-gray-400 text-sm text-center'>
-                        Don't have an account yet? <a href='/register' className='underline cursor-pointer text-white'>Sign Up</a>
+                <div className='mt-5 text-gray-600 text-sm text-center'>
+                        Don't have an account yet? <a href='/register' className='underline cursor-pointer text-black'>Sign Up</a>
                 </div>
             </form>
         </GuestLayout>
