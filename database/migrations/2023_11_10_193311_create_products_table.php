@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('path');
             $table->string('file_type');
 
-			$table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('user_id')->constrained();
 
             $table->timestamps();
         });
