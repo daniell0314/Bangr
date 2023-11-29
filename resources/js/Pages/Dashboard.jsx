@@ -15,6 +15,12 @@ export default function Dashboard(props) {
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900 dark:text-gray-100">You're logged in!</div>
                     </div>
+                    <div className="mt-4 w-1/2 bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                        <div className="p-6 text-xl font-semibold text-gray-800 dark:text-gray-200 text-center">
+                            Clients
+                        </div>
+                        <div className="text-center mb-6">43</div>
+                    </div>
                 </div>
             </div>
         </AuthenticatedLayout>
