@@ -45,6 +45,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function studios()
+    {
+        return $this->hasMany(Studio::class);
+    }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
     public function name()
     {
         return $this->first_name . ' ' . $this->last_name;

@@ -15,12 +15,17 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
             $table->string('description')->nullable();
             $table->timestamp('start');
             $table->timestamp('end');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('artist_id');
+            $table->unsignedBigInteger('studio_id');
 
-			$table->foreignId('user_id')->constrained();
+    		$table->foreign('user_id')->references('id')->on('users');
+    		$table->foreign('artist_id')->references('id')->on('users');
+    		$table->foreign('studio_id')->references('id')->on('studios');
+
 
             $table->timestamps();
         });
